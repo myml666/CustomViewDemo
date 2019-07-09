@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HistogramView">
+        <!--轴线颜色-->
+        <attr name="axisColor" format="color"/>
+        <!--柱形图的颜色-->
+        <attr name="rectColor" format="color"/>
+        <!--柱形图描述文字的颜色-->
+        <attr name="rectDescTextColor" format="color"/>
+        <!--柱形图描述文字的大小-->
+        <attr name="rectTextSize" format="float"/>
+    </declare-styleable>
+
+</resources>
