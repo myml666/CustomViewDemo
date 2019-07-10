@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hehuidai.customview.MainActivity">
 
-    <com.hehuidai.customview.one.histogramview.HistogramView
-        android:id="@+id/hisview"
-        app:axisColor="@color/colorAccent"
-        app:rectColor="@color/colorPrimary"
-        app:rectTextSize="30"
-        app:rectDescTextColor="#000"
+    <Button
+        android:id="@+id/bt_histogram"
+        android:text="柱状图控件"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</RelativeLayout>
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bt_shadown"
+        android:text="阴影布局"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

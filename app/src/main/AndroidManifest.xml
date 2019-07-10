@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--柱状图-->
+        <activity android:name=".one.histogramview.HistogramActivity"/>
+        <!--阴影布局-->
+        <activity android:name=".one.shadownview.ShadownActivity"/>
     </application>
 
 </manifest>
