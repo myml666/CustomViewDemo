@@ -20,6 +20,8 @@
         <activity android:name=".one.histogramview.HistogramActivity"/>
         <!--阴影布局-->
         <activity android:name=".one.shadownview.ShadownActivity"/>
+        <!--文字动画-->
+        <activity android:name=".one.animtextview.AnimTextViewActivity"/>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.hehuidai.customview.one.animtextview.AnimTextViewActivity
 import com.hehuidai.customview.one.histogramview.HistogramActivity
 import com.hehuidai.customview.one.histogramview.HistogramRectItem
 import com.hehuidai.customview.one.shadownview.ShadownActivity
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         bt_shadown.setOnClickListener {
             //跳转阴影布局
             startActivity(Intent(this@MainActivity,ShadownActivity::class.java))
+        }
+        bt_animtext.setOnClickListener {
+            //跳转文字动画
+            startActivity(Intent(this@MainActivity,AnimTextViewActivity::class.java))
         }
     }
 }

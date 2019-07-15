@@ -17,4 +17,9 @@
         android:text="阴影布局"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bt_animtext"
+        android:text="文字动画"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
