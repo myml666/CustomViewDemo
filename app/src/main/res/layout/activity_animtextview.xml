@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:id="@+id/bt_settext"
+        android:text="设置文字"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <com.hehuidai.customview.one.animtextview.PathAnimTextView
         android:id="@+id/patv"
         android:background="#ff0"
-        android:layout_width="wrap_content"
+        app:animTextColor="#ff0000"
+        app:animTextStrokWidth="2"
+        app:animTextSize="80"
+        app:animSpeed="fast"
+        app:animTextTypeFace="Muyao-Softbrush.ttf"
+        android:layout_width="200dp"
         android:layout_height="wrap_content" />
-</RelativeLayout>
+</LinearLayout>

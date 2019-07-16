@@ -1,6 +1,7 @@
 package com.hehuidai.customview.one.animtextview
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.hehuidai.customview.R
 import kotlinx.android.synthetic.main.activity_animtextview.*
@@ -22,8 +23,13 @@ class AnimTextViewActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animtextview)
+        bt_settext.setOnClickListener {
+            patv.setText("哈哈是的就哈斯就达十多家撒")
+            patv.startTextAnim()
+        }
         patv.setOnClickListener {
-            patv.setText("突如其来的骚，闪了我的腰")
+            patv.setText("Life is more than a temporary struggle, but also poetry and distant fields")
+            patv.startTextAnim()
         }
     }
 }
