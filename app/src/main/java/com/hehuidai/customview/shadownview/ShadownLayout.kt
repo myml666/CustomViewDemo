@@ -1,4 +1,4 @@
-package com.hehuidai.customview.one.shadownview
+package com.hehuidai.customview.shadownview
 
 import android.content.Context
 import android.graphics.Canvas
@@ -13,7 +13,7 @@ import com.blankj.utilcode.util.ConvertUtils
 /**
  *
  * @ProjectName:    CustomViewDemo
- * @Package:        com.hehuidai.customview.one.shadownview
+ * @Package:        com.hehuidai.customview.shadownview
  * @ClassName:      ShadownLayout
  * @Description:     java类作用描述 ：阴影布局
  * @Author:         作者名：lml

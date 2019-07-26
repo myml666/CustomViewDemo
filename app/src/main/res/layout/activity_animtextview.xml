@@ -6,18 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:id="@+id/bt_settext"
-        android:text="设置文字"
+        android:id="@+id/bt_startanim"
+        android:text="开始动画"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <com.hehuidai.customview.one.animtextview.PathAnimTextView
+    <com.hehuidai.customview.animtextview.PathAnimTextView
         android:id="@+id/patv"
-        android:background="#ff0"
         app:animTextColor="#ff0000"
         app:animTextStrokWidth="2"
         app:animTextSize="80"
         app:animSpeed="fast"
+        app:animTextLineMargen="0"
+        app:animText="Animation TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.hehuidai.customview.animtextview.PathAnimTextView
+        android:id="@+id/patv2"
+        app:animTextColor="#ff0000"
+        app:animTextStrokWidth="2"
+        app:animTextSize="80"
+        app:animSpeed="fast"
+        app:animText="Animation TextView"
         app:animTextTypeFace="Muyao-Softbrush.ttf"
-        android:layout_width="200dp"
+        app:animTextLineMargen="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.hehuidai.customview.animtextview.PathAnimTextView
+        android:id="@+id/patv3"
+        app:animTextColor="#ff0000"
+        app:animTextStrokWidth="2"
+        app:animTextSize="80"
+        app:animTextLineMargen="0"
+        app:animSpeed="fast"
+        app:animText="Animation TextView"
+        app:animTextTypeFace="FZZJ-KFTXKJW.TTF"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

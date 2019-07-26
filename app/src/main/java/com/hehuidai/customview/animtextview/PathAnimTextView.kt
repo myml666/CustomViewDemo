@@ -1,22 +1,20 @@
-package com.hehuidai.customview.one.animtextview
+package com.hehuidai.customview.animtextview
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
-import android.os.Handler
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import com.blankj.utilcode.util.ToastUtils
 import com.hehuidai.customview.R
 
 /**
  *
  * @ProjectName:    CustomViewDemo
- * @Package:        com.hehuidai.customview.one.animtextview
+ * @Package:        com.hehuidai.customview.animtextview
  * @ClassName:      PathAnimTextView
  * @Description:     java类作用描述 ：动画文字
  * @Author:         作者名：lml
@@ -43,6 +41,7 @@ class PathAnimTextView : View {
     private var heightCount: Int = 1//文字的行数
     private var mTextStrokWidth = 2f//文字画笔的宽度
     private var mTextTypeFace = ""
+    private var mTextLineMargen = 0f
     private val mPathMeasureList: ArrayList<PathMeasure> = ArrayList()
     private var mPathMeasure: PathMeasure? = null
     private var isWrapContent: Boolean = false//是否是自适应
@@ -79,6 +78,7 @@ class PathAnimTextView : View {
             if(!TextUtils.isEmpty(animTextTypeFace)){
                 mTextTypeFace = animTextTypeFace
             }
+            mTextLineMargen = ta.getFloat(R.styleable.PathAnimTextView_animTextLineMargen,mTextLineMargen)
         }
         mPaint.strokeWidth = mTextStrokWidth
         mPaint.color = mTextColor
@@ -87,7 +87,7 @@ class PathAnimTextView : View {
             mPaint.typeface = Typeface.createFromAsset(context.assets, mTextTypeFace)
         }
         mPaint.style = Paint.Style.STROKE//这里必须为STROKE否则文字会变得不清楚
-//        mTextWidth = mPaint.measureText(mText).toInt()//计算出初始状态的字符串宽度
+        mTextWidth = mPaint.measureText(mText).toInt()//计算出初始状态的字符串宽度
     }
 
     /**
@@ -95,7 +95,6 @@ class PathAnimTextView : View {
      */
     fun setText(text: String) {
         mText = text
-        mTextWidth = mPaint.measureText(mText).toInt()
     }
 
     /**
@@ -146,6 +145,7 @@ class PathAnimTextView : View {
      * 开始动画（用于手动开启）
      */
     fun startTextAnim(){
+        mTextWidth = mPaint.measureText(mText).toInt()
         requestLayout()
         initTextPath()
         startAnim()
@@ -160,10 +160,10 @@ class PathAnimTextView : View {
         calcStrlineCount()
         heightCount = mTextLineCountList.size
         mPathMeasureList.clear()
-        val textTopMargen = mPaint.fontMetrics.ascent - mPaint.fontMetrics.top//设置文字行之间的间距
+        val textTopMargen = (height - mTextSize*heightCount-(mPaint.fontMetrics.ascent - mPaint.fontMetrics.top)*2)/heightCount
         for (i in 0..(heightCount - 1)) {
             if (i > 0) {
-                mPaint.getTextPath(mText, mTextLineCountList[i - 1], mTextLineCountList[i], 0F, mTextSize * (i + 1) + textTopMargen * i, tempPath)
+                mPaint.getTextPath(mText, mTextLineCountList[i - 1], mTextLineCountList[i], 0F, mTextSize * (i + 1)+textTopMargen*i, tempPath)
             } else {
                 mPaint.getTextPath(mText, 0, mTextLineCountList[i], 0F, mTextSize * (i + 1), tempPath)
             }
@@ -195,7 +195,7 @@ class PathAnimTextView : View {
     private fun startAnim() {
         mAnimation = ValueAnimator.ofFloat(0f, 1f)
         //根据路径长度计算出动画时间
-        when(mAnimSpeed) {
+        when(mAnimSpeed) {//这里是根据不同的设置来计算速度
             SPEED_FAST -> mAnimation!!.duration = (mPathMeasure!!.length / 600 * 1000).toLong()
             SPEED_SLOW -> mAnimation!!.duration = (mPathMeasure!!.length / 200 * 1000).toLong()
             SPEED_MEDIUM -> mAnimation!!.duration = (mPathMeasure!!.length / 400 * 1000).toLong()
@@ -240,7 +240,7 @@ class PathAnimTextView : View {
         if (specMode == View.MeasureSpec.EXACTLY) {
             result = specSize
         } else {
-            result = (mPaint.fontMetrics.bottom - mPaint.fontMetrics.top).toInt() * heightCount//根据计算出来的行数来设置控件高度
+            result = ((mPaint.fontMetrics.bottom-mPaint.fontMetrics.top)*heightCount+mTextLineMargen*(heightCount-1)).toInt()
             if (specMode == View.MeasureSpec.AT_MOST) {
                 result = Math.min(result, specSize)
             }

@@ -1,11 +1,11 @@
-package com.hehuidai.customview.one.histogramview
+package com.hehuidai.customview.histogramview
 
 import android.graphics.PointF
 
 /**
  *
  * @ProjectName:    CustomViewDemo
- * @Package:        com.hehuidai.customview.one.histogramview
+ * @Package:        com.hehuidai.customview.histogramview
  * @ClassName:      HistogramRectItem
  * @Description:     java类作用描述 ：柱形图的实体类
  * @Author:         作者名：lml

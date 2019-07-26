@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.hehuidai.customview.MainActivity">
 
-    <com.hehuidai.customview.one.histogramview.HistogramView
+    <com.hehuidai.customview.histogramview.HistogramView
         android:id="@+id/hisview"
         app:axisColor="@color/colorAccent"
         app:rectColor="@color/colorPrimary"

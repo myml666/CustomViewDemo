@@ -1,4 +1,4 @@
-package com.hehuidai.customview.one.histogramview
+package com.hehuidai.customview.histogramview
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,7 +11,7 @@ import java.util.ArrayList
 /**
  *
  * @ProjectName:    CustomViewDemo
- * @Package:        com.hehuidai.customview.one.histogramview
+ * @Package:        com.hehuidai.customview.histogramview
  * @ClassName:      HistogramActivity
  * @Description:     java类作用描述 ：
  * @Author:         作者名：lml

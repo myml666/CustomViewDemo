@@ -1,16 +1,15 @@
-package com.hehuidai.customview.one.shadownview
+package com.hehuidai.customview.shadownview
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.blankj.utilcode.util.ConvertUtils
-import com.hehuidai.customview.R
 
 /**
  *
  * @ProjectName:    CustomViewDemo
- * @Package:        com.hehuidai.customview.one.shadownview
+ * @Package:        com.hehuidai.customview.shadownview
  * @ClassName:      ShadownView
  * @Description:     java类作用描述 ：阴影控件
  * @Author:         作者名：lml

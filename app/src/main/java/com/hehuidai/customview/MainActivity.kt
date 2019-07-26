@@ -1,16 +1,13 @@
 package com.hehuidai.customview
 
 import android.content.Intent
-import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import com.hehuidai.customview.one.animtextview.AnimTextViewActivity
-import com.hehuidai.customview.one.histogramview.HistogramActivity
-import com.hehuidai.customview.one.histogramview.HistogramRectItem
-import com.hehuidai.customview.one.shadownview.ShadownActivity
+import com.hehuidai.customview.animtextview.AnimTextViewActivity
+import com.hehuidai.customview.animtextview2.AnimTextView2Activity
+import com.hehuidai.customview.histogramview.HistogramActivity
+import com.hehuidai.customview.shadownview.ShadownActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         bt_animtext.setOnClickListener {
             //跳转文字动画
             startActivity(Intent(this@MainActivity,AnimTextViewActivity::class.java))
+        }
+        bt_animtext2.setOnClickListener {
+            //跳转文字动画2
+            startActivity(Intent(this@MainActivity, AnimTextView2Activity::class.java))
         }
     }
 }

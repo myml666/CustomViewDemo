@@ -1,4 +1,4 @@
-package com.hehuidai.customview.one.shadownview
+package com.hehuidai.customview.shadownview
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_shadown.*
 /**
  *
  * @ProjectName:    CustomViewDemo
- * @Package:        com.hehuidai.customview.one.histogramview
+ * @Package:        com.hehuidai.customview.histogramview
  * @ClassName:      HistogramActivity
  * @Description:     java类作用描述 ：阴影控件展示Activity
  * @Author:         作者名：lml

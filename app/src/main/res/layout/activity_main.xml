@@ -22,4 +22,9 @@
         android:text="文字动画"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bt_animtext2"
+        android:text="文字动画2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

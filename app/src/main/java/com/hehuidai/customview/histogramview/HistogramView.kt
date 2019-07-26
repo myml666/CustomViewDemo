@@ -1,4 +1,4 @@
-package com.hehuidai.customview.one.histogramview
+package com.hehuidai.customview.histogramview
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
